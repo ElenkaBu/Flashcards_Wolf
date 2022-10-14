@@ -4,15 +4,20 @@
 module.exports = {
     async up (queryInterface, Sequelize) {
       await queryInterface.bulkInsert('Decks', [{
-        title: 'Very difficult questions',
+        title: 'JavaScript',
         createdAt: new Date(),
         updatedAt: new Date(),
     },
     {
-      title: 'Stupied questions',
+      title: 'Правда или ложь',
       createdAt: new Date(),
       updatedAt: new Date(),
-  }], {})
+  },{
+    title: 'Школьные вопросы',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+}
+], {})
   },
 
   async down (queryInterface, Sequelize) {
