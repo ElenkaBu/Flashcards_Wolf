@@ -7,3 +7,10 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+
+router.post('/', (req, res) => {
+  const { user } = res.locals;
+  if (!user) {
+    return res.status(404).json({ status: 'error', message: 'Пожалуйста зарегистрируйтесь !' });
+  }
+});

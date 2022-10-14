@@ -8,7 +8,8 @@ function Main({ title, user }) {
       <Header user={user} />
       {!user ? (
         <div className="mainHello">
-          <p>Добро пожаловать! Пожалуйста зарегистрируйтесь!</p>
+          <button type="click" className="btn btn-primary btnlogin play">ИГРАТЬ</button>
+          <div className="err-btn" />
         </div>
       ) : (
         <div className="sdf">
@@ -19,6 +20,7 @@ function Main({ title, user }) {
           <a href="/topic/3" id="3" className="topic">Школьные вопросы</a>
         </div>
       )}
+      <script src="/js/main.js" />
     </Layout>
   );
 }
