@@ -4,7 +4,7 @@ const errLog = document.querySelector('.err-log');
 logForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const {
-    method, action, email, password,
+    method, action, name, password,
   } = event.target;
 
   const response = await fetch(action, {
@@ -13,7 +13,7 @@ logForm.addEventListener('submit', async (event) => {
       'Content-type': 'Application/json',
     },
     body: JSON.stringify({
-      email: email.value,
+      name: name.value,
       password: password.value,
     }),
   });

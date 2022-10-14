@@ -11,6 +11,7 @@ const registrationApiRouter = require('./routers/api/regRouter');
 const personalArea = require('./routers/render/personalAreaRoute');
 const configApp = require('./config/serverConfig');
 const topic = require('./routers/render/topic');
+const answer = require('./routers/api/answerRoute');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,5 +25,6 @@ app.use('/api', registrationApiRouter);
 app.use('/login', loginRouter);
 app.use('/api', loginApiRouter);
 app.use('/topic', topic);
+app.use('/topic', answer);
 
 app.listen(PORT, () => console.log(`Сервер запущен, порт: ${PORT}`));

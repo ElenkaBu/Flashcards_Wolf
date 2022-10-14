@@ -9,7 +9,7 @@ module.exports = function personalArea({ user }) {
       <div>
         <p>{`Добро пожаловать ${user.name}`}</p>
         <p>{`Ваш логин: ${user.name}`}</p>
-        <p>{`Ваш email:${user.email}`}</p>
+        <p>{`Ваш пароль:${user.password}`}</p>
       </div>
     </Layout>
   );

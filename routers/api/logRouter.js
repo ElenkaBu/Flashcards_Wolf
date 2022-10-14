@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../db/models');
 
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const logUser = await User.findOne({ where: { email } });
+  const { name, password } = req.body;
+  const logUser = await User.findOne({ where: { name } });
   if (logUser) {
     const validPassword = await bcrypt.compare(password, logUser.password);
     if (validPassword) {

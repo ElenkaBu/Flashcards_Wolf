@@ -2,12 +2,14 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const morgan = require('morgan');
 const getUser = require('../middlewar/getUser');
 const reactSSR = require('../middlewar/reactSSR');
 
 const sessionConfig = require('./sessionConfig');
 
 module.exports = function configApp(app) {
+  app.use(morgan('dev'));
   app.use(session(sessionConfig));
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());

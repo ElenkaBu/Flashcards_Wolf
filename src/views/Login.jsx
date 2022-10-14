@@ -11,7 +11,7 @@ module.exports = function Login({ title}) {
         <h1>Авторизация</h1>
         <form method="POST" action="api/login" className="logForm">
           <div className="mb-3 loginTable">
-            <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email" />
+            <input type="text" name="name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email" />
             <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Введите ваш пароль" />
             <button type="submit" className="btn btn-primary btnlogin">Отправить</button>
           </div>

@@ -12,11 +12,11 @@ function Main({ title, user }) {
         </div>
       ) : (
         <div className="sdf">
-          <a href="/topic" className="topic">Тема 1</a>
+          <a href="/topic/1" id="1" className="topic">JavaScript</a>
           <br />
-          <a href="/topic" className="topic">Тема 2</a>
+          <a href="/topic/2" id="2" className="topic">Правда или ложь</a>
           <br />
-          <a href="/topic" className="topic">Тема 3</a>
+          <a href="/topic/3" id="3" className="topic">Школьные вопросы</a>
         </div>
       )}
     </Layout>
