@@ -1,14 +1,28 @@
+require('dotenv').config();
+require('@babel/register');
+
 const express = require('express');
 
-const config = require('./config/config');
+const mainRouter = require('./routers/render/mainRoute');
+const loginRouter = require('./routers/render/loginRouter');
+const loginApiRouter = require('./routers/api/logRouter');
+const registrationRouter = require('./routers/render/registrationRouter');
+const registrationApiRouter = require('./routers/api/regRouter');
+const personalArea = require('./routers/render/personalAreaRoute');
+const configApp = require('./config/serverConfig');
+const topic = require('./routers/render/topic');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-config(app);
+configApp(app);
 
-app.get('./', (req, res) => {
-  res.send('Hello!');
-});
+app.use('/', mainRouter);
+app.use('/registration', registrationRouter);
+app.use('/personalArea', personalArea);
+app.use('/api', registrationApiRouter);
+app.use('/login', loginRouter);
+app.use('/api', loginApiRouter);
+app.use('/topic', topic);
 
-app.listen(PORT, () => console.log(`Server work at ${PORT} port`));
+app.listen(PORT, () => console.log(`Сервер запущен, порт: ${PORT}`));
